@@ -46,19 +46,19 @@ function setMode(isWork) {
         restModeButton.classList.remove('active');
         document.querySelector('.controls').classList.add('cooking');
         document.querySelector('.controls').classList.remove('cooling');
-        tomato.style.backgroundColor = '#ff6b6b'; // Start fresh red for cooking
+        tomato.style.backgroundColor = '#ff6b6b';
         fireElement.classList.remove('hidden');
         iceElement.classList.add('hidden');
-        document.body.style.backgroundColor = '#ff6b6b'; // Tomato red background
+        document.body.style.backgroundColor = '#ff6b6b';
     } else {
         restModeButton.classList.add('cooling');
         workModeButton.classList.remove('active');
         document.querySelector('.controls').classList.add('cooling');
         document.querySelector('.controls').classList.remove('cooking');
-        tomato.style.backgroundColor = '#a52a2a'; // Start burnt for cooling
+        tomato.style.backgroundColor = '#a52a2a';
         fireElement.classList.add('hidden');
         iceElement.classList.remove('hidden');
-        document.body.style.backgroundColor = '#a8d8ff'; // Ice blue background
+        document.body.style.backgroundColor = '#a8d8ff';
     }
     
     // Update start button text based on mode
