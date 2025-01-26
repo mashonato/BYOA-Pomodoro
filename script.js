@@ -31,7 +31,6 @@ function updateDisplay() {
 function setMode(isWork) {
     isWorkTime = isWork;
     timeLeft = isWork ? WORK_TIME : BREAK_TIME;
-    modeText.textContent = isWork ? 'Work Time' : 'Rest Time';
     
     // Update button states and colors
     workModeButton.classList.toggle('active', isWork);
