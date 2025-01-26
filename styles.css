@@ -344,4 +344,13 @@ body {
 
 .ice-cube:nth-child(3) {
     animation-delay: 0.6s;
+}
+
+/* Add this at the end of your CSS file */
+.credit {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+    font-weight: 500;
 } 
