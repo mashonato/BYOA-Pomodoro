@@ -26,16 +26,15 @@ body {
     margin: 1rem;
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(8px);
-    max-width: calc(100% - 2rem);
+    max-width: calc(100% - 3rem);
     width: 100%;
     box-sizing: border-box;
 }
 
 .scene {
     position: relative;
-    height: 300px;
-    margin-bottom: 2rem;
+    height: 250px;
+    margin-bottom: 1.5rem;
 }
 
 /* Tomato Styles */
@@ -363,14 +362,37 @@ body {
 @media (max-width: 480px) {
     .container {
         padding: 1.5rem;
-        margin: 0.5rem;
+        margin: 1.5rem;
+    }
+    
+    .scene {
+        height: 200px;
     }
     
     .timer {
-        font-size: 3rem; /* Slightly smaller timer on mobile */
+        font-size: 3.5rem;
+        margin: 1rem 0;
     }
     
     .controls {
-        flex-wrap: wrap; /* Allow buttons to wrap on very small screens */
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .mode-toggle {
+        gap: 8px;
+    }
+
+    .tomato {
+        width: 100px;
+        height: 100px;
+    }
+
+    .fire {
+        bottom: 30px;
+    }
+
+    .ice {
+        bottom: 30px;
     }
 } 
