@@ -248,18 +248,6 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-.controls button#pause {
-    background-color: #9c27b0 !important; /* Purple color */
-    color: white;
-    box-shadow: 0 4px 12px rgba(156, 39, 176, 0.2) !important;
-}
-
-.controls button#pause:hover {
-    background-color: #7b1fa2 !important; /* Darker purple on hover */
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(156, 39, 176, 0.3) !important;
-}
-
 .mode {
     margin-top: 1.5rem;
     font-size: 1rem;
