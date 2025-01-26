@@ -26,8 +26,6 @@ body {
     margin: 1rem;
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-    max-width: calc(100% - 3rem);
-    width: 100%;
     box-sizing: border-box;
 }
 
@@ -361,6 +359,8 @@ body {
 /* Add media query for small screens */
 @media (max-width: 480px) {
     .container {
+        max-width: calc(100% - 3rem);
+        width: 100%;
         padding: 1.5rem;
         margin: 1.5rem;
     }
@@ -394,5 +394,31 @@ body {
 
     .ice {
         bottom: 30px;
+    }
+}
+
+/* Add styles for desktop screens */
+@media (min-width: 481px) {
+    .container {
+        max-width: 400px; /* Fixed width for desktop */
+        width: auto;
+        padding: 3rem;
+    }
+
+    .scene {
+        height: 300px; /* Original desktop height */
+    }
+
+    .tomato {
+        width: 120px; /* Original desktop size */
+        height: 120px;
+    }
+
+    .fire {
+        bottom: 50px; /* Original position */
+    }
+
+    .ice {
+        bottom: 50px;
     }
 } 
