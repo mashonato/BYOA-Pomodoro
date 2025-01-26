@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --cooking-color: #ff6b6b;
+    --cooking-hover: #ff5252;
+    --cooling-color: #4aa5e5;
+    --cooling-hover: #3994d4;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #ff6b6b;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+}
+
+.scene {
+    position: relative;
+    height: 300px;
+    margin-bottom: 2rem;
+}
+
+/* Tomato Styles */
+.tomato {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    box-shadow: inset -20px -20px 30px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.face {
+    position: relative;
+    top: 40%;
+}
+
+.eyes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.eye {
+    width: 15px;
+    height: 15px;
+    background-color: #333;
+    border-radius: 50%;
+    position: relative;
+}
+
+.eye::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.mouth {
+    width: 40px;
+    height: 20px;
+    border-radius: 0 0 20px 20px;
+    background-color: #333;
+    margin: 8px auto;
+}
+
+.leaf {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #4CAF50;
+    border-radius: 0 50% 0 50%;
+    transform-origin: bottom;
+    animation: leafWiggle 3s ease-in-out infinite;
+}
+
+/* Fire Styles */
+.fire {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.fire.hidden {
+    display: none;
+}
+
+.flames {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.flame {
+    position: absolute;
+    bottom: 0;
+    width: 30px;
+    height: 60px;
+    background: linear-gradient(to top, #ff4d4d, #ff9933);
+    border-radius: 50% 50% 20% 20%;
+    animation: flicker 1s ease-in-out infinite;
+}
+
+.flame:nth-child(1) {
+    left: 35px;
+    height: 70px;
+    animation-delay: 0.2s;
+}
+
+.flame:nth-child(2) {
+    left: 15px;
+    height: 50px;
+    animation-delay: 0.4s;
+}
+
+.flame:nth-child(3) {
+    left: 55px;
+    height: 55px;
+    animation-delay: 0.6s;
+}
+
+.logs {
+    width: 120px;
+    height: 20px;
+    background-color: #8b4513;
+    border-radius: 10px;
+    position: relative;
+}
+
+.logs::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    width: 80px;
+    height: 20px;
+    background-color: #8b4513;
+    border-radius: 10px;
+    transform: rotate(-5deg);
+}
+
+/* Timer and Controls */
+.timer {
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 1.5rem 0;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+}
+
+.mode-toggle {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.mode-toggle button {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    color: var(--text-secondary);
+    border: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.mode-toggle button.active.cooking {
+    background-color: var(--cooking-color);
+    color: white;
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+}
+
+.mode-toggle button.active.cooling {
+    background-color: var(--cooling-color);
+    color: white;
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(74, 165, 229, 0.2);
+}
+
+.mode-toggle button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 1.5rem 0;
+}
+
+.controls button {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.controls.cooking button {
+    background-color: var(--cooking-color);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.2);
+}
+
+.controls.cooling button {
+    background-color: var(--cooling-color);
+    box-shadow: 0 4px 12px rgba(74, 165, 229, 0.2);
+}
+
+.controls button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.mode {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+/* Animations */
+@keyframes flicker {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.1); }
+}
+
+@keyframes leafWiggle {
+    0%, 100% { transform: translateX(-50%) rotate(-5deg); }
+    50% { transform: translateX(-50%) rotate(5deg); }
+}
+
+/* Ice Styles */
+.ice {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 120px;
+    height: 60px;
+}
+
+.ice.hidden {
+    display: none;
+}
+
+.ice-cube {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #a8d8ff 0%, #4aa5e5 50%, #2b88c7 100%);
+    border-radius: 8px;
+    opacity: 0.8;
+}
+
+.ice-cube:nth-child(1) {
+    left: 40px;
+    bottom: 0;
+    transform: rotate(-5deg);
+}
+
+.ice-cube:nth-child(2) {
+    left: 10px;
+    bottom: 15px;
+    transform: rotate(10deg);
+}
+
+.ice-cube:nth-child(3) {
+    left: 70px;
+    bottom: 15px;
+    transform: rotate(-15deg);
+}
+
+.ice-shine {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+}
+
+.ice-cube::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+.ice-cube {
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+.ice-cube:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.ice-cube:nth-child(3) {
+    animation-delay: 0.6s;
+} 
