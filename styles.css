@@ -366,7 +366,7 @@ body {
     }
     
     .scene {
-        height: 200px;
+        height: 250px;
     }
     
     .timer {
@@ -384,16 +384,17 @@ body {
     }
 
     .tomato {
+        top: 25%;
         width: 100px;
         height: 100px;
     }
 
     .fire {
-        bottom: 30px;
+        bottom: 60px;
     }
 
     .ice {
-        bottom: 30px;
+        bottom: 60px;
     }
 }
 
