@@ -366,7 +366,7 @@ body {
     }
     
     .scene {
-        height: 250px;
+        height: 300px; /* Increased from 250px to give even more space */
     }
     
     .timer {
@@ -384,17 +384,17 @@ body {
     }
 
     .tomato {
-        top: 25%;
+        top: 20%; /* Move tomato even higher */
         width: 100px;
         height: 100px;
     }
 
     .fire {
-        bottom: 60px;
+        bottom: 80px; /* Move fire even lower */
     }
 
     .ice {
-        bottom: 60px;
+        bottom: 80px; /* Keep ice aligned with fire */
     }
 }
 
